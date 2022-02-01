@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ex 1 - News</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="news">
+            <h1 class="news__title" id="formTitle">Se inscreva para receber mais informações</h1>
+            <form action="" class="news__form">
+                <div class="news__form-group">
+                    <label for="newsInputEmail" class="news__label">
+                        Email
+                    </label>
+                    <input type="email" class="news__input" id="newsInputEmail" 
+                        placeholder="email@exemplo.com.br">
+                </div>
+                <div class="news__form-group">
+                    <button type="submit" class="button news__button" id="news__button" disabled>Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        let inputEmail = document.getElementById("newsInputEmail")
+        let inputButton = document.getElementById("news__button")
+
+        function checarEmail() {
+            if (inputEmail.value.length > 5 && inputEmail.value.includes("@") && inputEmail.value.includes(".")) {
+                inputButton.disable = false
+                inputButton.style.backgroundColor = "#ECDDF3"
+                
+            }
+            else{
+                inputButton.disable = true
+                inputButton.style.backgroundColor = "red"
+            }
+        }
+
+        inputEmail.addEventListener('keyup', function() {
+            checarEmail();
+        });
+       
+        
+    </script>
+</body>
+
+</html>
