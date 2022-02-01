@@ -1,0 +1,1 @@
+Quando criamos a planilha física do prejeto, pensamos em trazer mais realidade no modelo. Deixando a visualização dos dados o mais parecido possível com o que encontraríamos na hora de concluir os scripts SQL. Inclusive já organizando os dados de forma não genérica, mas sim, com os dados reais que seriam colocados entro do Banco de Dados.

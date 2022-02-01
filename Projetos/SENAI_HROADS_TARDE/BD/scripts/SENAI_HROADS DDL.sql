@@ -1,0 +1,57 @@
+CREATE DATABASE SENAI_HROADS_TARDE;
+GO
+
+USE SENAI_HROADS_TARDE;
+GO
+
+CREATE TABLE TipoHabilidade(
+	idTipo TINYINT PRIMARY KEY IDENTITY(1,1),
+		nomeTipo VARCHAR(20)
+);
+GO
+
+CREATE TABLE Classe(
+	idClasse TINYINT PRIMARY KEY IDENTITY(1,1),
+		nomeClasse VARCHAR(30)
+);
+GO
+
+CREATE TABLE Personagem(
+	idPersonagem TINYINT PRIMARY KEY IDENTITY(1,1),
+	idClasse TINYINT FOREIGN KEY REFERENCES Classe(idClasse),
+		nomePersonagem VARCHAR(30),
+		vidaMax VARCHAR(3),
+		manaMax VARCHAR(3),
+		dataCriacao DATE,
+		dataAtualizacao DATE
+);
+GO
+
+CREATE TABLE Habilidade(
+	idHabilidade TINYINT PRIMARY KEY IDENTITY(1,1),
+	idTipo TINYINT FOREIGN KEY REFERENCES TipoHabilidade(idTipo),
+		habilidade VARCHAR(20)
+);
+GO
+
+CREATE TABLE QuadroHabilidade(
+	idQuadro TINYINT PRIMARY KEY IDENTITY(1,1),
+	idClasse TINYINT FOREIGN KEY REFERENCES Classe(idClasse),
+	idHabilidade TINYINT FOREIGN KEY REFERENCES Habilidade(idHabilidade)
+);
+GO
+
+CREATE TABLE TipoUsuario(
+idTipoUsuario TINYINT PRIMARY KEY IDENTITY,
+Tipo VARCHAR(13),
+)
+GO
+
+CREATE TABLE Usuario(
+idUsuario INT PRIMARY KEY IDENTITY,
+idTipoUsuario TINYINT FOREIGN KEY REFERENCES TipoUsuario(idTipoUsuario),
+Nome VARCHAR(30) UNIQUE,
+Email VARCHAR(256) UNIQUE,
+Senha VARCHAR(16),
+)
+GO

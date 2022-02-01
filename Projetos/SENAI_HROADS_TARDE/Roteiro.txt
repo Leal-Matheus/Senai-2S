@@ -1,0 +1,128 @@
+1. StoryTelling
+O cliente HROADS deseja começar a construir o seu próprio jogo de RPG online. Para
+isto, ele definiu que cada personagem do jogo, possuirá uma classe e que cada classe do
+jogo irá possuir uma ou mais habilidades, e esta habilidade pertence somente a um tipo
+de habilidade.
+Por exemplo:
+O personagem DeuBug é da classe Bárbaro que por sua vez possui uma habilidade de
+ataque chamada Lança Mortal e uma habilidade de defesa chamada Escudo Supremo.
+DeuBug -> classe Bárbaro -> Lança Mortal -> ataque
+-> Escudo Supremo -> defesa
+
+O personagem BitBug é da classe Monge que por sua vez possui uma habilidade de cura
+chamada Recuperar Vida e uma habilidade de defesa chamada Escudo Supremo.
+BitBug -> classe Monge -> Recuperar Vida -> cura
+-> Escudo Supremo -> defesa
+
+Cada personagem deve pertencer exclusivamente a uma única classe. Uma classe pode
+ter uma ou mais habilidades. E uma habilidade deve pertencer a exclusivamente um
+único tipo de habilidade.
+
+Para que o jogo tenha início, HROADS disponibilizou um conteúdo com algumas
+informações sobre como ele quer que o jogo seja construído.
+Classes
+• Bárbaro (Lança Mortal, Escudo Supremo)
+• Cruzado (Escudo Supremo)
+• Caçadora de Demônios (Lança Mortal)
+• Monge (Recuperar Vida, Escudo Supremo)
+• Necromante (começa sem habilidades)
+• Feiticeiro (Recuperar Vida)
+• Arcanista (começa sem habilidades)
+Habilidades
+• Lança Mortal (tipo de habilidade: ataque)
+• Escudo Supremo (tipo de habilidade: defesa)
+• Recuperar Vida (tipo de habilidade: cura)
+Tipos de Habilidades
+• Ataque
+• Defesa
+• Cura
+• Magia
+
+Personagens
+Nome Personagem: DeuBug
+Classe: Bárbaro
+Capacidade Máxima Vida: 100
+Capacidade Máxima Mana: 80
+Data de Atualização: Data Atual
+Data de Criação: 18/01/2019
+
+Nome Personagem: BitBug
+Classe: Monge
+Capacidade Máxima Vida: 70
+Capacidade Máxima Mana: 100
+Data de Atualização: Data Atual
+Data de Criação: 17/03/2016
+
+Nome Personagem: Fer8
+Classe: Arcanista
+Capacidade Máxima Vida: 75
+Capacidade Máxima Mana: 60
+Data de Atualização: Data Atual
+Data de Criação: 18/03/2018
+
+Exercícios
+• Modelagem do banco de dados (Conceitual, Lógico e Físico) – draw.io + Excel
+• Scripts DDL, DML e DQL
+• Trello – compartilhar o link na entrega
+
+Tarefas
+1. Criar o banco de dados chamado
+SENAI_HROADS_MANHA/SENAI_HROADS_TARDE (conforme o período);
+2. Criar as tabelas no banco de dados;
+3. Inserir os registros conforme descrição no próprio texto (classes, habilidades,
+tipos de habilidades e personagens);
+4. Atualizar o nome do personagem Fer8 para Fer7;
+5. Atualizar o nome da classe de Necromante para Necromancer;
+6. Selecionar todos os personagens;
+7. Selecionar todos as classes;
+8. Selecionar somente o nome das classes;
+9. Selecionar todas as habilidades;
+10. Realizar a contagem de quantas habilidades estão cadastradas;
+11. Selecionar somente os id’s das habilidades classificando-os por ordem
+crescente;
+12. Selecionar todos os tipos de habilidades;
+13. Selecionar todas as habilidades e a quais tipos de habilidades elas fazem parte;
+14. Selecionar todos os personagens e suas respectivas classes;
+15. Selecionar todos os personagens e as classes (mesmo que elas não tenham
+correspondência em personagens);
+16. Selecionar todas as classes e suas respectivas habilidades;
+17. Selecionar todas as habilidades e suas classes (somente as que possuem
+correspondência);
+18. Selecionar todas as habilidades e suas classes (mesmo que elas não tenham
+correspondência).
+Scripts
+• Script de criação (hroads_01_DDL.sql)
+• Script de inserção (hroads_02_DML.sql)
+• Script de seleção (hroads_03_DQL.sql)
+
+Roteiro API
+O cliente HROADS aprovou o desenvolvimento do banco de dados e gostou do seu
+trabalho, por isso lhe contratou para desenvolver também a solução back-end utilizando
+a interface API.
+
+Para isso, você deverá:
+Criar um novo projeto do tipo WebAPI com o seguinte nome: senai.hroads.webApi.
+Para a construção, é necessário utilizar o Entity Framework Core.
+A abordagem será de sua escolha: Database First ou Code First.
+
+Sua API deverá ter as seguintes funcionalidades:
+• CRUD completo de todas as entidades (Tipos de usuário, Usuários, Classes, Tipos
+de Habilidade, Habilidades e Personagens);
+• Para as listagens, os dados das entidades relacionadas também deverão ser
+mostrados. Por exemplo: ao listar uma Habilidade, também deverá ser mostrado
+o título do Tipo de Habilidade ao qual esta se refere;
+• Somente o usuário do tipo ADMINISTRADOR poderá realizar os cadastros de
+todas as entidades, exceto a de Personagens;
+• Somente o usuário do tipo JOGADOR poderá cadastrar um novo personagem
+(não é necessário atrelar um personagem a um jogador).
+• O usuário do tipo JOGADOR ou ADMINISTRADOR poderá visualizar a lista com
+todos os personagens;
+• A visualização das Classes, Tipos de Habilidade e Habilidades do jogo é pública.
+• Sua autenticação deverá ser feita utilizando JWT (não esquecer de criar um
+endpoint para gerar o token);
+• Utilizar o Swagger para a documentação de sua API;
+• Na resposta da API em formato JSON, os valores nulos deverão ser ignorados.
+
+Dica
+Crie um LoginController para gerar o token e assim separar esta funcionalidade dos
+endpoints de Usuários.

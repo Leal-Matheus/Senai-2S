@@ -1,0 +1,250 @@
+{
+	"info": {
+		"_postman_id": "884d413e-0b69-42c8-ae25-bbe4ca7e3691",
+		"name": "Senai.Inlock.Tarde",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Jogos",
+			"item": [
+				{
+					"name": "Jogos.ListarPorID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.ListarTodos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhZG9yIiwiQ2xhaW0gcGVyc29uYWxpemFkYSI6IlZhbG9yIFRlc3RlIiwiZXhwIjoxNjMxMzE5MDM0LCJpc3MiOiJJbmxvY2sud2ViQVBJIiwiYXVkIjoiSW5sb2NrLndlYkFQSSJ9.334nnNCi6YQlgH3qZvR0kVNeAUqwj8FUMa-If6dgcW0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Cadastrar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhZG9yIiwiQ2xhaW0gcGVyc29uYWxpemFkYSI6IlZhbG9yIFRlc3RlIiwiZXhwIjoxNjMxMzEzOTQxLCJpc3MiOiJJbmxvY2sud2ViQVBJIiwiYXVkIjoiSW5sb2NrLndlYkFQSSJ9.lQ-kR2PCxGrnmcfvJiqUMFXsE-T727EB7KBLlBKZ3_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeJogo\" : \"Rocket League\",\r\n    \"Valor\" : 50.00,\r\n    \"dataLancamento\" : \"2021-07-07T22:17:18.919Z\",\r\n    \"descricao\" : \"JOGO DE ALTA POTÊNCIA, ESTILO ARCADE DE FUTEBOL E CAOS AUTOMOBILÍSTICO. PERSONALIZE SEU CARRO, ENTRE EM CAMPO E COMPITA!!\",\r\n    \"estudio\":{\r\n        \"idEstudio\" : \"3\",\r\n        \"nomeEstudio\" : \"Psyonix\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeJogo\": \"Diablo 3\",\r\n     \"Valor\": 60,\r\n    \"dataLancamento\": \"2012-05-14\",\r\n    \"descricao\": \"é um jogo que contém bastante acão e é viciante, seja você um novato ou um fã!\",\r\n    \"idEstudio\" : 1\r\n\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Jogos.Deletar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJBZG1pbmlzdHJhZG9yIiwiQ2xhaW0gcGVyc29uYWxpemFkYSI6IlZhbG9yIFRlc3RlIiwiZXhwIjoxNjMxMzEzOTQxLCJpc3MiOiJJbmxvY2sud2ViQVBJIiwiYXVkIjoiSW5sb2NrLndlYkFQSSJ9.lQ-kR2PCxGrnmcfvJiqUMFXsE-T727EB7KBLlBKZ3_c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/excluir/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"excluir",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Usuarios",
+			"item": [
+				{
+					"name": "Usuarios.Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"admin@admin.com\",\r\n    \"senha\" : \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/Usuarios/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Usuarios",
+								"Login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Estudios",
+			"item": [
+				{
+					"name": "Estudio.MostrarTodos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Estudio",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Estudio"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

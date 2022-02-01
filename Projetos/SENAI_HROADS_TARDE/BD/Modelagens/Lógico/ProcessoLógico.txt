@@ -1,0 +1,1 @@
+Na construção do Modelo Lógico do projeto, nós tentamos nos basear no antigo modelo conceitual, para construir uma base mais avançada do que deveria ser construido. Ele foi essencial para entendermos o fluxo de informações dentro do banco.
